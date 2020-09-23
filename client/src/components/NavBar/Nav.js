@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./Nav.css";
 
 const Nav = () => {
@@ -9,10 +10,10 @@ const Nav = () => {
       </div>
       <ul id="nav-bar">
         <li className="nav-tab">
-          <a href="/your-recipes">Your Recipes</a>
+          <Link to="/your-recipes">Your Recipes</Link>
         </li>
         <li className="nav-tab">
-          <a href="/cooking-log">Cooking Log</a>
+          <Link to="/cooking-log">Cooking Log</Link>
         </li>
       </ul>
     </div>
