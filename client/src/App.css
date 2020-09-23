@@ -1,0 +1,12 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: contents;
+}
+
+#app {
+  margin-left: 10%;
+  margin-right: 10%;
+}

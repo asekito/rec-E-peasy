@@ -1,10 +1,12 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { render } from "react-dom";
+import "./App.css";
+import Nav from "./components/NavBar/Nav";
 
 const App = () => {
   return (
-    <div>
-      <h1>Test</h1>
+    <div id="app">
+      <Nav />
     </div>
   );
 };

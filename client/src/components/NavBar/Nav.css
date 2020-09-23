@@ -1,0 +1,21 @@
+#nav-component {
+  display: flex;
+  place-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#nav-bar {
+  display: flex;
+  list-style: none;
+}
+
+#nav-title {
+  padding: 0px 30px;
+}
+
+#nav-bar li a {
+  padding: 14px 25px;
+  text-decoration: none;
+  color: black;
+}
