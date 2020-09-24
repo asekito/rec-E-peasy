@@ -27,6 +27,12 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    contentBase: path.join(__dirname, "/public/dist/"),
+    compress: true,
+    port: 3001,
+    historyApiFallback: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Rec-E-Peasy",
