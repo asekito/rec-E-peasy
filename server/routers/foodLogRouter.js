@@ -19,4 +19,17 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.get("/", async (req, res) => {
+  try {
+    const allLogs = await Log.find((err) => {
+      if (err) throw err;
+    });
+    return res.status(201).send(allLogs);
+  } catch (err) {
+    return res
+      .status(401)
+      .json({ errors: ["Error with getting all food logs"] });
+  }
+});
+
 module.exports = router;
