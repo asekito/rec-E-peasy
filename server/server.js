@@ -9,8 +9,9 @@ const { DATABASE_URI, environment, PORT } = require("./config/index");
 const recipesRouter = require("./routers/recipesRouter.js");
 const foodLogRouter = require("./routers/foodLogRouter");
 // app.use(express.static(path.join(__dirname, "../client/public/dist")));
-app.use(express.json());
 app.use(cors({ origin: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/recipes", recipesRouter);
 app.use("/food-log", foodLogRouter);

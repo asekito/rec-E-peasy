@@ -9,7 +9,6 @@ router.post("/", async (req, res) => {
     // const doc = new Recipe(req.body);
     const newRecipe = new Recipe(req.body).save((err) => {
       if (err) throw err;
-      else console.log("Recipe added");
     });
     return res.status(201).json({ errors: ["none"] });
   } catch (err) {
@@ -19,7 +18,20 @@ router.post("/", async (req, res) => {
       .json({ errors: ["Error with post request for recipes"] });
   }
 });
-
 // [ ] Check if recipe already exists and send to client side to make sure they want to add it again
+
+router.get("/", async (req, res) => {
+  try {
+    const allRecipes = await Recipe.find((err) => {
+      if (err) throw err;
+    });
+    return res.status(201).send(allRecipes);
+  } catch (err) {
+    console.error(err);
+    return res.status(401).json({ errors: ["Error with get request"] });
+  }
+});
+
+// get request search FUTURE
 
 module.exports = router;
