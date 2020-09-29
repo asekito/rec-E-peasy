@@ -1,6 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import axios from "axios";
 import RecipeCard from "./RecipeCard";
+import "./Recipes.css";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -26,12 +27,12 @@ const Recipes = () => {
   }, []);
 
   return (
-    <div>
+    <div className="recipes-page">
       <h2>Your Recipes</h2>
       <div>
-        <button>Add Recipe</button>
+        <button className="btn">Add Recipe</button>
       </div>
-      <div>
+      <div className="card-container">
         {recipes.map((recipe) => (
           <RecipeCard recipe={recipe} />
         ))}
