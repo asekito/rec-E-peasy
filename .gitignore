@@ -2,3 +2,5 @@ node_modules
 dist
 
 .env
+
+/Data_Body_example
