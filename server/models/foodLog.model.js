@@ -8,6 +8,7 @@ const LogSchema = new Schema({
   rating: { type: Number },
 });
 // future carbs, fibger, fats, proteins, quantity
+// validation check
 
 const Log = mongoose.model("food_log", LogSchema);
 
