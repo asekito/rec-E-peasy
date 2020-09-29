@@ -20,6 +20,7 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
+  // console.log(req);
   try {
     const allLogs = await Log.find((err) => {
       if (err) throw err;
