@@ -1,27 +1,29 @@
 import React from "react";
+import "./RecipeCard.css";
 
 const RecipeCard = ({ recipe }) => {
   return (
     <div className="recipe-card">
-      <div>{recipe.name}</div>
-      {recipe.ingredients.map((ingredientElement) => (
-        <div>
-          <div>{ingredientElement.ingredient}</div>
+      <div>Recipe: {recipe.name}</div>
+      <div>Ingredients: </div>
+      <div>
+        {recipe.ingredients.slice(0, 2).map((ingredientElement, idx) => (
           <div>
-            {ingredientElement.estimated_amount
-              ? ingredientElement.estimated_amount
-              : null}
-          </div>
-          <div>
+            <div>{ingredientElement.ingredient}</div>
+            {ingredientElement.estimated_amount ? (
+              <div>{ingredientElement.estimated_amount}</div>
+            ) : null}
+
             {ingredientElement.measured_amount ? (
               <div>
-                <span>{ingredientElement.measured_amount.amount} </span>
-                <span>{ingredientElement.measured_amount.unit}</span>
+                {ingredientElement.measured_amount.amount}{" "}
+                {ingredientElement.measured_amount.unit}
               </div>
             ) : null}
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+      <div>See whole recipe</div>
     </div>
   );
 };
