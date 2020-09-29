@@ -32,6 +32,13 @@ module.exports = {
     compress: true,
     port: 3001,
     historyApiFallback: true,
+    proxy: {
+      "/recipes": {
+        target: "http://localhost:3000",
+        secure: false,
+        changeOrigin: true,
+      },
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({

@@ -3,4 +3,8 @@ dist
 
 .env
 
+<<<<<<< HEAD
 /Data_Body_example
+=======
+Data_body_example
+>>>>>>> 887badf1b6d8ab26facac3370f4de45b7bd93209
