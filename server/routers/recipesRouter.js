@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
     const newRecipe = new Recipe(req.body).save((err) => {
       if (err) throw err;
     });
-    return res.status(201).json({ errors: ["none"] });
+    return res.sendStatus(201);
   } catch (err) {
     console.error(err);
     return res
@@ -25,7 +25,7 @@ router.get("/", async (req, res) => {
     const allRecipes = await Recipe.find((err) => {
       if (err) throw err;
     });
-    return res.status(201).send(allRecipes);
+    return res.status(201).json({ body: allRecipes });
   } catch (err) {
     console.error(err);
     return res.status(401).json({ errors: ["Error with get request"] });
