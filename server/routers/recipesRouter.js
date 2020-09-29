@@ -4,27 +4,13 @@ const router = express.Router();
 
 const Recipe = require("../models/recipes.model");
 
-const raw = {
-  name: "Lumpia",
-  ingredients: [
-    {
-      ingredient: "Pork",
-      measured_amount: {
-        amount: 10,
-        unit: "ounce",
-      },
-    },
-  ],
-};
-
 router.post("/", async (req, res) => {
   try {
     // const doc = new Recipe(req.body);
-    const newRecipe = new Recipe(raw).save((err) => {
+    const newRecipe = new Recipe(req.body).save((err) => {
       if (err) throw err;
-      else console.log("Recipe added");
     });
-    return res.status(201).json({ errors: ["none"] });
+    return res.sendStatus(201);
   } catch (err) {
     console.error(err);
     return res
@@ -32,5 +18,20 @@ router.post("/", async (req, res) => {
       .json({ errors: ["Error with post request for recipes"] });
   }
 });
+// [ ] Check if recipe already exists and send to client side to make sure they want to add it again
+
+router.get("/", async (req, res) => {
+  try {
+    const allRecipes = await Recipe.find((err) => {
+      if (err) throw err;
+    });
+    return res.status(201).json({ body: allRecipes });
+  } catch (err) {
+    console.error(err);
+    return res.status(401).json({ errors: ["Error with get request"] });
+  }
+});
+
+// get request search FUTURE
 
 module.exports = router;
