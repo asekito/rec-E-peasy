@@ -1,5 +1,4 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
-import axios from "axios";
 import RecipeCard from "./RecipeCard";
 import "./Recipes.css";
 

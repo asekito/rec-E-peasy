@@ -4,13 +4,18 @@ import "./RecipeCard.css";
 const RecipeCard = ({ recipe }) => {
   return (
     <div className="recipe-card">
-      <div>Recipe: {recipe.name}</div>
-      <div>Ingredients: </div>
-      <div>
-        {recipe.ingredients.slice(0, 2).map((ingredientElement, idx) => (
-          <div>
-            <div>{ingredientElement.ingredient}</div>
-            {ingredientElement.estimated_amount ? (
+      <div className="recipe-info">
+        <div className="recipe-name">{recipe.name}</div>
+        <div className="ingredients-list-title">
+          <b>Ingredients:</b>
+        </div>
+        <div className="ingredients-list-container">
+          {recipe.ingredients.slice(0, 2).map((ingredientElement, idx) => (
+            <div className="individual-ingredient">
+              <div className="ingredient-name">
+                {ingredientElement.ingredient}
+              </div>
+              {/* {ingredientElement.estimated_amount ? (
               <div>{ingredientElement.estimated_amount}</div>
             ) : null}
 
@@ -19,11 +24,12 @@ const RecipeCard = ({ recipe }) => {
                 {ingredientElement.measured_amount.amount}{" "}
                 {ingredientElement.measured_amount.unit}
               </div>
-            ) : null}
-          </div>
-        ))}
+            ) : null} */}
+            </div>
+          ))}
+        </div>
       </div>
-      <div>See whole recipe</div>
+      <div className="recipe-image">Image here</div>
     </div>
   );
 };
