@@ -1,6 +1,25 @@
 .recipe-card {
+  border: 2.7px solid #000000a1;
+  display: flex;
+  margin: 5% 10%;
+  padding: 3%;
+  border-radius: 8px;
+  max-height: 100px;
+  min-height: 100px;
+  flex-direction: row;
+  place-content: center;
+  cursor: pointer;
+  place-content: space-around;
+  align-items: center;
+}
+
+.recipe-image {
   border: 1px solid black;
-  display: block;
-  margin: 5% 11%;
-  padding: 3.5%;
+  min-width: 80px;
+  min-height: 80px;
+}
+
+.ingredients-list-container {
+  display: inline-flex;
+  flex-direction: column;
 }
