@@ -1,0 +1,7 @@
+.popup.add-recipe {
+  background: white;
+  min-height: 450px;
+  max-height: 500px;
+  min-width: 600px;
+  max-width: 720px;
+}

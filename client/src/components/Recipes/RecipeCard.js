@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./RecipeCard.css";
-import { Modal } from "@material-ui/core/";
+import { Modal } from "@material-ui/core";
 
 const RecipeCard = ({ recipe }) => {
   const [open, setOpen] = useState(false);
@@ -56,13 +56,7 @@ const RecipeCard = ({ recipe }) => {
               </div>
             </div>
           ))}
-          <Modal
-            open={open}
-            onClose={toggle}
-            aria-labelledby="simple-modal-title"
-            aria-describedby="simple-modal-description"
-            className="modal"
-          >
+          <Modal open={open} onClose={toggle} className="modal">
             {WholeRecipe}
           </Modal>
         </div>
