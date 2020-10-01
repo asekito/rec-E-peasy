@@ -4,4 +4,16 @@
   max-height: 500px;
   min-width: 600px;
   max-width: 720px;
+  outline: none;
+}
+
+#add-ingred-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.new-ingredient-form {
+  display: flex;
+  flex-direction: column;
 }

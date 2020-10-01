@@ -41,8 +41,14 @@ const Recipes = () => {
         </button>
       </div>
       <div>
-        <Modal open={newRecipe} onClose={toggle}>
-          <div className="modal">
+        <Modal
+          open={newRecipe}
+          onClose={toggle}
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+          className="modal"
+        >
+          <div>
             <AddRecipe />
           </div>
         </Modal>
