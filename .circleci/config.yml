@@ -2,8 +2,13 @@ version: 2.1
 orbs:
   node: circleci/node@3.0.0
 
-workflows:
-  matrix-tests:
-    jobs:
-      - node/test:
-          version: 13.11.0
+jobs:
+  build:
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - run: npm install
+
+      - run: npm run start:dev
