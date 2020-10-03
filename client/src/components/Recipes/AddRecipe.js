@@ -23,7 +23,11 @@ const AddRecipe = () => {
       const ingredientObject = {};
       for (const input of element) {
         if (input.value) {
-          ingredientObject[input.name] = input.value;
+          if (input.name === "measured_amount") {
+            ingredientObject[input.name] = parseInt(input.value);
+          } else {
+            ingredientObject[input.name] = input.value;
+          }
         }
       }
       await setIngredients((ingredients) => [...ingredients, ingredientObject]);
@@ -32,7 +36,12 @@ const AddRecipe = () => {
 
   const submitRecipeHandler = (e) => {
     e.preventDefault();
-    fetch("/recipes", { method: "POST" }).then((data) => console.log(data));
+    const data = { name: recipeName, ingredients: ingredients };
+    fetch("/recipes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    }).then((data) => console.log(data));
   };
 
   return (
@@ -60,16 +69,16 @@ const AddRecipe = () => {
           <input
             autoComplete='off'
             type='text'
-            name='estimated-amount'
+            name='estimated_amount'
             placeholder='guesstimated amount (OPTIONAL)'
           />
           <input
             autoComplete='off'
             type='number'
-            name='measured-amount'
+            name='measured_amount'
             placeholder='measured amount (OPTIONAL)'
           />
-          <select name='measured-unit' className='measured-unit'>
+          <select name='measured_unit' className='measured-unit'>
             <option defaultValue='' value=''>
               -
             </option>
