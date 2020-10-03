@@ -11,21 +11,29 @@ const AddRecipe = () => {
     e.preventDefault();
     let input = `
                   <form class="new-ingredient-measurements">
-                    <input type="text" name="ingredient" />
-                    <input type="text" name="estimated-amount" />
-                    <input type="number" name="measured-amount" />
-                    <select name="measured-unit">
-                      <option defaultValue="" value="">
-                        -
-                      </option>
-                      <option value="ounce">ounce</option>
-                      <option value="pounds">pound(s)</option>
-                      <option value="pint">pint</option>
-                      <option value="cup">cup</option>
-                      <option value="tablespoons">tablespoons</option>
-                      <option value="teaspoon">teaspoon</option>
-                    </select>
-                </form>
+          <input type="text" name="ingredient" placeholder="ingredient name" />
+          <input
+            type="text"
+            name="estimated-amount"
+            placeholder="guesstimated amount (OPTIONAL)"
+          />
+          <input
+            type="number"
+            name="measured-amount"
+            placeholder="measured amount (OPTIONAL)"
+          />
+          <select name="measured-unit" class="measured-unit">
+            <option defaultValue="" value="">
+              -
+            </option>
+            <option value="ounce">ounce</option>
+            <option value="pounds">pound(s)</option>
+            <option value="pint">pint</option>
+            <option value="cup">cup</option>
+            <option value="tablespoons">tablespoons</option>
+            <option value="teaspoon">teaspoon</option>
+          </select>
+        </form>
                 `;
     document.getElementById("add-ingred-wrapper").innerHTML += input;
   };
@@ -50,16 +58,30 @@ const AddRecipe = () => {
       <div className="add-recipe-name">
         <label>
           Recipe Name
-          <input type="text" name="recipe" />
+          <input type="text" name="recipe" autoComplete="off" />
         </label>
       </div>
-      <button onClick={(e) => addIngredient(e)}>+ Ingredient</button>
       <div id="add-ingred-wrapper">
         <form className="new-ingredient-measurements">
-          <input type="text" name="ingredient" />
-          <input type="text" name="estimated-amount" />
-          <input type="number" name="measured-amount" />
-          <select name="measured-unit">
+          <input
+            autoComplete="off"
+            type="text"
+            name="ingredient"
+            placeholder="ingredient name"
+          />
+          <input
+            autoComplete="off"
+            type="text"
+            name="estimated-amount"
+            placeholder="guesstimated amount (OPTIONAL)"
+          />
+          <input
+            autoComplete="off"
+            type="number"
+            name="measured-amount"
+            placeholder="measured amount (OPTIONAL)"
+          />
+          <select name="measured-unit" className="measured-unit">
             <option defaultValue="" value="">
               -
             </option>
@@ -72,9 +94,16 @@ const AddRecipe = () => {
           </select>
         </form>
       </div>
-
-      <button onClick={(e) => createIngredients(e)}>Add All Ingredients</button>
-      <button>Add Recipe</button>
+      <button className="btn add-recipe-btn" onClick={(e) => addIngredient(e)}>
+        Add Ingredient
+      </button>
+      <button
+        className="btn add-recipe-btn"
+        onClick={(e) => createIngredients(e)}
+      >
+        Add All Ingredients
+      </button>
+      <button className="btn add-recipe-btn">Add Recipe</button>
       <div>
         <h2>Preview</h2>
         {ingredients.map((ingredient, idx) => (

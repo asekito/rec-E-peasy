@@ -48,9 +48,7 @@ const Recipes = () => {
           aria-describedby="simple-modal-description"
           className="modal"
         >
-          <div>
-            <AddRecipe />
-          </div>
+          <AddRecipe />
         </Modal>
       </div>
       <div className="card-container">

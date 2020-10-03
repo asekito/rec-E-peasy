@@ -5,6 +5,11 @@
   min-width: 600px;
   max-width: 720px;
   outline: none;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  overflow: overlay;
 }
 
 #add-ingred-wrapper {
@@ -13,7 +18,19 @@
   justify-content: center;
 }
 
-#new-ingredient-form {
+.new-ingredient-measurements {
   display: flex;
   flex-direction: column;
+  margin: 0px 60px;
+  text-align-last: center;
+}
+
+.btn.add-recipe-btn {
+  width: 190px;
+  align-self: center;
+  margin: 20px 0px;
+}
+
+select.measured-unit {
+  margin: 0px 0px 30px;
 }
