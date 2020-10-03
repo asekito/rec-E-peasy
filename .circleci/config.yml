@@ -7,8 +7,6 @@ jobs:
     docker:
       - image: node:12.13.1
 
-    working_directory: ~/rec-E-pies
-
     steps:
       - checkout
 
