@@ -10,7 +10,7 @@ jobs:
       - image: node:12.13.1
 
     steps:
-      - checkout
+      - checkout:
           path: ~/rec-E-pies/client
 
       - run: echo $PWD
