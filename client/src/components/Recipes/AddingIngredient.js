@@ -2,15 +2,15 @@ const AddingIngredient = `<form class="new-ingredient-measurements">
 <input type="text" name="ingredient" placeholder="ingredient name" />
 <input
   type="text"
-  name="estimated-amount"
+  name="estimated_amount"
   placeholder="guesstimated amount (OPTIONAL)"
 />
 <input
   type="number"
-  name="measured-amount"
+  name="measured_amount"
   placeholder="measured amount (OPTIONAL)"
 />
-<select name="measured-unit" class="measured-unit">
+<select name="measured_unit" class="measured-unit">
   <option defaultValue="" value="">
     -
   </option>

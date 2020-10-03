@@ -10,10 +10,8 @@ const RecipeSchema = new Schema({
     {
       ingredient: { type: "String", require: [true, "Must have ingredients"] },
       estimated_amount: String,
-      measured_amount: {
-        amount: Number,
-        unit: String,
-      },
+      measured_amount: Number,
+      measured_unit: String,
     },
   ],
 });

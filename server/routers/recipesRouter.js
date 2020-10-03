@@ -6,8 +6,8 @@ const Recipe = require("../models/recipes.model");
 
 router.post("/", async (req, res) => {
   try {
-    // const doc = new Recipe(req.body);
-    const newRecipe = new Recipe(req.body).save((err) => {
+    const doc = new Recipe(req.body);
+    const newRecipe = doc.save((err) => {
       if (err) throw err;
     });
     return res.sendStatus(201);
