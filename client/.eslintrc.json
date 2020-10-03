@@ -1,0 +1,20 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
+    "plugin:react-hooks/recommended", // Uses the recommended rules from @eslint-plugin-react-hooks
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": { "react/prop-types": 0 }
+}
