@@ -16,8 +16,10 @@ const AddRecipe = () => {
 
   const createIngredients = async (e) => {
     e.preventDefault();
-    const hi = document.getElementsByClassName("new-ingredient-measurements");
-    for (const element of hi) {
+    const allIngredients = document.getElementsByClassName(
+      "new-ingredient-measurements"
+    );
+    for (const element of allIngredients) {
       const ingredientObject = {};
       for (const input of element) {
         if (input.value) {
@@ -28,7 +30,10 @@ const AddRecipe = () => {
     }
   };
 
-  // const submitRecipeHandler = () => {};
+  const submitRecipeHandler = (e) => {
+    e.preventDefault();
+    fetch("/recipes", { method: "POST" }).then((data) => console.log(data));
+  };
 
   return (
     <div className='popup add-recipe'>
@@ -86,7 +91,12 @@ const AddRecipe = () => {
       >
         Add All Ingredients
       </button>
-      <button className='btn add-recipe-btn'>Add Recipe</button>
+      <button
+        className='btn add-recipe-btn'
+        onClick={(e) => submitRecipeHandler(e)}
+      >
+        Add Recipe
+      </button>
       <div>
         <h2>Preview</h2>
         {ingredients.map((ingredient, idx) => (

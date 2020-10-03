@@ -1,9 +1,9 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import RecipeCard from "./RecipeCard";
-// import AddRecipe from "./AddRecipe";
-const AddRecipe = () => lazy(() => import("./AddRecipe"));
 import "./Recipes.css";
 import { Modal } from "@material-ui/core";
+
+const AddRecipe = lazy(() => import("./AddRecipe"));
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
