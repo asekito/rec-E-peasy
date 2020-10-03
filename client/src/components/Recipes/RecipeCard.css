@@ -23,3 +23,28 @@
   display: inline-flex;
   flex-direction: column;
 }
+
+.recipe-popup {
+  background: white;
+  min-height: 450px;
+  max-height: 500px;
+  min-width: 600px;
+  max-width: 720px;
+}
+
+.modal {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+.popup.recipe-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.popup.recipe-name {
+  text-align: center;
+}
