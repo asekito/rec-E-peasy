@@ -1,6 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import RecipeCard from "./RecipeCard";
-import AddRecipe from "./AddRecipe";
+// import AddRecipe from "./AddRecipe";
+const AddRecipe = () => lazy(() => import("./AddRecipe"));
 import "./Recipes.css";
 import { Modal } from "@material-ui/core";
 
@@ -16,9 +17,7 @@ const Recipes = () => {
     fetch("/recipes", {
       method: "GET",
     })
-      .then((data) => {
-        return data.json();
-      })
+      .then((data) => data.json())
       .then((data) => {
         if (data.errors) {
           alert(data.errors);
@@ -33,10 +32,10 @@ const Recipes = () => {
   }, []);
 
   return (
-    <div className="recipes-page">
+    <div className='recipes-page'>
       <h2>Your Recipes</h2>
       <div>
-        <button className="btn" onClick={toggle}>
+        <button className='btn' onClick={toggle}>
           Add Recipe
         </button>
       </div>
@@ -44,16 +43,18 @@ const Recipes = () => {
         <Modal
           open={newRecipe}
           onClose={toggle}
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-          className="modal"
+          aria-labelledby='simple-modal-title'
+          aria-describedby='simple-modal-description'
+          className='modal'
         >
-          <AddRecipe />
+          <Suspense fallback={<div>Loading ...</div>}>
+            <AddRecipe />
+          </Suspense>
         </Modal>
       </div>
-      <div className="card-container">
-        {recipes.map((recipe) => (
-          <RecipeCard recipe={recipe} />
+      <div className='card-container'>
+        {recipes.map((recipe, idx) => (
+          <RecipeCard recipe={recipe} key={idx} />
         ))}
       </div>
     </div>
