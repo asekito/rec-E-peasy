@@ -1,16 +1,16 @@
 import React from "react";
 import { shallow } from "enzyme";
-import sinon from "sinon";
+// import sinon from "sinon";
 
 import Nav from "../components/NavBar/Nav";
 
 describe("Nav", () => {
   const wrapper = shallow(<Nav />);
-  test("shoulde render navigation bar", () => {
+  test("should render navigation bar", () => {
     expect(wrapper.exists()).toBeTruthy();
   });
 
-  it("should render 3 navigation tabs", () => {
+  it("should render 4 navigation tabs", () => {
     expect(wrapper.find("Link")).toHaveLength(4);
   });
 
