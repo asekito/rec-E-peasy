@@ -12,18 +12,14 @@ const WholeRecipe = ({ recipe }) => {
           <div className='ingredients-list-container'>
             {recipe.ingredients.map((ingredientElement, idx) => (
               <div className='individual-ingredient' key={idx}>
-                <div className='ingredient-name'>
-                  {ingredientElement.ingredient}
-                </div>
-                {ingredientElement.estimated_amount ? (
-                  <div>{ingredientElement.estimated_amount}</div>
-                ) : null}
-                {ingredientElement.measured_amount ? (
-                  <div>
-                    {ingredientElement.measured_amount.amount}{" "}
-                    {ingredientElement.measured_amount.unit}
-                  </div>
-                ) : null}
+                {/* <div className='ingredient-name'> */}
+                {ingredientElement.ingredient}, {/* </div> */}
+                {ingredientElement.estimated_amount
+                  ? ingredientElement.estimated_amount
+                  : null}
+                {ingredientElement.measured_amount
+                  ? `${ingredientElement.measured_amount} ${ingredientElement.measured_unit}`
+                  : null}
               </div>
             ))}
           </div>
