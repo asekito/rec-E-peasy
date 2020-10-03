@@ -10,19 +10,19 @@ const CookLog = lazy(() => import("./components/CookLog/CookLog"));
 const App = () => {
   return (
     <Router>
-      <div id="app">
+      <div id='app'>
         <nav>
           <Nav />
         </nav>
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
-            <Route exact path="/">
+            <Route exact path='/'>
               <Home />
             </Route>
-            <Route exact path="/your-recipes">
+            <Route exact path='/your-recipes'>
               <Recipes />
             </Route>
-            <Route path="/cooking-log">
+            <Route path='/cooking-log'>
               <CookLog />
             </Route>
           </Switch>
