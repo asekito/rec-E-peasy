@@ -1,0 +1,22 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+
+jobs:
+  build:
+    working_directory: ~/rec-E-pies/client
+
+    docker:
+      - image: node:12.13.1
+
+    steps:
+      - checkout:
+          path: ~/rec-E-pies
+
+      - run: echo $PWD
+
+      - run: npm install
+
+      - run: npm run test
+
+      - run: npm run build
