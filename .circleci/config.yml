@@ -7,10 +7,12 @@ jobs:
     docker:
       - image: node:12.13.1
 
-    working_directory: ~/project/client
+    working_directory: ~/rec-E-pies
 
     steps:
       - checkout
+
+      - run: echo $PWD
 
       - run: npm install
 
