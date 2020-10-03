@@ -7,22 +7,12 @@ jobs:
     docker:
       - image: node:12.13.1
 
-    working_directory: ~/client/
+    working_directory: client/
 
     steps:
       - checkout
 
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-
       - run: npm install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npm run build
 
