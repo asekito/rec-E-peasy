@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - checkout:
-          path: ~/rec-E-pies/client
+          path: ~/rec-E-pies
 
       - run: echo $PWD
 
       - run: npm install
 
-      - run: npm run build
+      - run: npm run test
 
       - run: npm run start:dev
