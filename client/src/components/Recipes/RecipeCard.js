@@ -10,7 +10,6 @@ const RecipeCard = ({ recipe }) => {
   const toggle = () => {
     setOpen(!open);
   };
-
   return (
     <div className='recipe-card' onClick={toggle}>
       <div className='recipe-info'>
