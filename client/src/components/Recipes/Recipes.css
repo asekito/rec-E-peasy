@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: white;
+  height: 100%;
 }
 
 .btn {

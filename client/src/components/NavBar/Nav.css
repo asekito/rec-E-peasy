@@ -1,3 +1,8 @@
+nav {
+  box-shadow: 0px 12px 23px 23px #0d0d0deb;
+  position: relative;
+}
+
 #nav-component {
   display: flex;
   place-items: center;
@@ -5,12 +10,6 @@
   justify-content: space-between;
   margin-left: 10%;
   margin-right: 10%;
-}
-
-#nav-bar {
-  display: flex;
-  list-style: none;
-  animation: test 0.7s steps(80, end);
 }
 
 #nav-title {
@@ -27,14 +26,24 @@
   font-weight: 500;
 }
 
+#nav-bar {
+  display: flex;
+  list-style: none;
+  animation: test 0.7s steps(80, end);
+}
+
 @keyframes test {
   from {
     height: 0px;
-    opacity: 0.1;
+    opacity: 0;
   }
   50% {
-    height: 15px;
-    opacity: 0.6;
+    height: 10px;
+    opacity: 0.3;
+  }
+  70% {
+    height: 16px;
+    opacity: 0.7;
   }
   to {
     height: 22px;
