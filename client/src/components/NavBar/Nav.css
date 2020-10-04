@@ -1,3 +1,8 @@
+nav {
+  box-shadow: 0px 12px 23px 23px #0d0d0deb;
+  position: relative;
+}
+
 #nav-component {
   display: flex;
   place-items: center;
@@ -7,11 +12,6 @@
   margin-right: 10%;
 }
 
-#nav-bar {
-  display: flex;
-  list-style: none;
-}
-
 #nav-title {
   padding: 0px 30px;
 }
@@ -19,5 +19,39 @@
 #nav-bar li a {
   padding: 14px 25px;
   text-decoration: none;
-  color: black;
+  color: white;
+  letter-spacing: 0.7px;
+  margin: 0px 3.6px;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+#nav-bar {
+  display: flex;
+  list-style: none;
+  animation: test 0.7s steps(80, end);
+}
+
+@keyframes test {
+  from {
+    height: 0px;
+    opacity: 0;
+  }
+  50% {
+    height: 10px;
+    opacity: 0.3;
+  }
+  70% {
+    height: 16px;
+    opacity: 0.7;
+  }
+  to {
+    height: 22px;
+  }
+}
+
+#nav-title a {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 3.2px;
 }

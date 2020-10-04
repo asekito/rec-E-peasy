@@ -38,12 +38,23 @@
   padding-top: 30px;
   white-space: nowrap;
   overflow: hidden;
-  width: 19.4em;
+  width: 20.2em;
+  word-spacing: 1px;
   animation: type 3s steps(32, end) infinite alternate;
 }
 
 @keyframes type {
   from {
     width: 0em;
+  }
+}
+
+span {
+  animation: blinking-animation 1s steps(5, end) infinite;
+}
+
+@keyframes blinking-animation {
+  from {
+    visibility: hidden;
   }
 }

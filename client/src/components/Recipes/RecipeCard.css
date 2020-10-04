@@ -48,3 +48,12 @@
 .popup.recipe-name {
   text-align: center;
 }
+
+.ingredients-list-title {
+  font-weight: 600;
+}
+
+.recipe-name {
+  font-size: 1.4em;
+  font-weight: bold;
+}

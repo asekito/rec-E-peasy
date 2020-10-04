@@ -5,7 +5,9 @@ const Home = () => {
   return (
     <div id='homepage-content'>
       <div id='home-bkimg' />
-      <h2 className='home title'>simple and to the point . . . :) </h2>
+      <h2 className='home title'>
+        simple and to the point . . . <span>|</span>
+      </h2>
       <div id='home-intro'>
         <p>
           Tired of restrictive recipe websites? Tired of having to input every
