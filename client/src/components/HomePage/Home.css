@@ -39,6 +39,7 @@
   white-space: nowrap;
   overflow: hidden;
   width: 19.4em;
+  word-spacing: 1px;
   animation: type 3s steps(32, end) infinite alternate;
 }
 
