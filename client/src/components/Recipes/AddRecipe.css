@@ -7,6 +7,7 @@
   padding: 70px;
   display: flex;
   flex-direction: row;
+  border-radius: 10px;
 }
 
 #add-ingred-wrapper {
@@ -18,7 +19,6 @@
 .new-ingredient-measurements {
   display: flex;
   flex-direction: column;
-  margin: 0px 60px;
   text-align-last: center;
 }
 
@@ -39,9 +39,15 @@ select.measured-unit {
 }
 
 .add-rec-form {
-  padding: 10px;
+  padding: 5px;
+  text-align: center;
 }
 
 .buttons-container {
   text-align: center;
+}
+
+.adding-recipe-container {
+  width: 50%;
+  padding-right: 50px;
 }
