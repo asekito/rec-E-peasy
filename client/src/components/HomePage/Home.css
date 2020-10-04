@@ -2,6 +2,7 @@
   height: 100%;
   width: 100%;
   position: relative;
+  text-align: -webkit-center;
 }
 
 #home-bkimg {
@@ -15,13 +16,32 @@
 }
 
 #home-intro {
-  background: #bf7574d1;
+  background: #bc7877a3;
   position: absolute;
   height: fit-content;
   z-index: 10;
-  margin-top: 20px;
   /* border-radius: 0px; */
   padding: 20px 50px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   text-align: -webkit-center;
+  margin: 10px 100px 0px 100px;
+  box-shadow: 0px 2.3px 9.8px 0.7px #e95d5d7a;
+  border-radius: 3.5px;
+  cursor: default;
+}
+
+.home.title {
+  color: white;
+  position: relative;
+  padding-top: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 19.4em;
+  animation: type 3s steps(32, end) infinite alternate;
+}
+
+@keyframes type {
+  from {
+    width: 0em;
+  }
 }
