@@ -15,9 +15,7 @@ const RecipeCard = ({ recipe }) => {
     <div className='recipe-card' onClick={toggle}>
       <div className='recipe-info'>
         <div className='recipe-name'>{recipe.name}</div>
-        <div className='ingredients-list-title'>
-          <b>Ingredients:</b>
-        </div>
+        <div className='ingredients-list-title'>Ingredients:</div>
         <div className='ingredients-list-container'>
           {recipe.ingredients.slice(0, 2).map((ingredientElement, idx) => (
             <div className='individual-ingredient' key={idx}>

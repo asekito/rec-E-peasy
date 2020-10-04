@@ -99,7 +99,10 @@ const AddRecipe = () => {
             type='reset'
             className='btn add-recipe-btn'
             onClick={() => {
-              if (isNaN(parseInt(currentIngredient["measured_amount"]))) {
+              if (
+                currentIngredient["measured_amount"] &&
+                isNaN(parseInt(currentIngredient["measured_amount"]))
+              ) {
                 return alert("Measured amount must be a number.");
               }
               if (currentIngredient.ingredient) {
@@ -124,14 +127,15 @@ const AddRecipe = () => {
         <h1 style={{ textAlignLast: "center" }}>Ingredients</h1>
         {ingredients.map((ingredient, idx) => (
           <div key={idx}>
-            {ingredient.ingredient}
+            {ingredient.ingredient}{" "}
             {ingredient.estimated_amount
-              ? ingredient.estimated_amount
-              : null}{" "}
+              ? `${ingredient.estimated_amount} `
+              : null}
             {ingredient.measured_amount
-              ? `${ingredient.measured_amount}`
-              : null}{" "}
-            {ingredient.measured_unit ? ingredient.measured_unit : null}
+              ? `${ingredient.measured_amount} ${
+                  ingredient.measured_unit ? ingredient.measured_unit : null
+                }`
+              : null}
           </div>
         ))}
       </div>
