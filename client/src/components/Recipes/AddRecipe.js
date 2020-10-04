@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import AddingIngredient from "./AddingIngredient";
 import "./AddRecipe.css";
 // eslint-disable-next-line no-unused-vars
 import regeneratorRuntime from "regenerator-runtime";
@@ -7,32 +6,7 @@ import regeneratorRuntime from "regenerator-runtime";
 const AddRecipe = () => {
   const [recipeName, setRecipeName] = useState("");
   const [ingredients, setIngredients] = useState([]);
-
-  const addIngredient = (e) => {
-    e.preventDefault();
-    const input = AddingIngredient;
-    document.getElementById("add-ingred-wrapper").innerHTML += input;
-  };
-
-  const createIngredients = async (e) => {
-    e.preventDefault();
-    const allIngredients = document.getElementsByClassName(
-      "new-ingredient-measurements"
-    );
-    for (const element of allIngredients) {
-      const ingredientObject = {};
-      for (const input of element) {
-        if (input.value) {
-          if (input.name === "measured_amount") {
-            ingredientObject[input.name] = parseInt(input.value);
-          } else {
-            ingredientObject[input.name] = input.value;
-          }
-        }
-      }
-      await setIngredients((ingredients) => [...ingredients, ingredientObject]);
-    }
-  };
+  const [currentIngredient, setCurrentIngredient] = useState({});
 
   const submitRecipeHandler = (e) => {
     e.preventDefault();
@@ -46,39 +20,71 @@ const AddRecipe = () => {
 
   return (
     <div className='popup add-recipe'>
-      <h1 onClick={() => console.log(ingredients)}>Add New Recipe</h1>
-      <div className='add-recipe-name'>
-        <label>
-          Recipe Name
+      <div className='adding-recipe-container'>
+        <h1 style={{ textAlignLast: "center" }}>Add New Recipe</h1>
+        <div style={{ textAlignLast: "center" }}>
           <input
             type='text'
+            style={{ marginBottom: 35, textAlign: "center" }}
+            className='add-rec-form'
             name='recipe'
             autoComplete='off'
+            placeholder='Name of your recipe'
             onChange={(e) => setRecipeName(e.target.value)}
           />
-        </label>
-      </div>
-      <div id='add-ingred-wrapper'>
+        </div>
+
         <form className='new-ingredient-measurements'>
           <input
-            autoComplete='off'
             type='text'
+            autoComplete='off'
+            className='ingred add-rec-form'
             name='ingredient'
             placeholder='ingredient name'
+            onChange={(e) => {
+              setCurrentIngredient({
+                ...currentIngredient,
+                [e.target.name]: e.target.value,
+              });
+            }}
           />
           <input
-            autoComplete='off'
             type='text'
+            autoComplete='off'
+            className='ingred add-rec-form'
             name='estimated_amount'
             placeholder='guesstimated amount (OPTIONAL)'
+            onChange={(e) => {
+              setCurrentIngredient({
+                ...currentIngredient,
+                [e.target.name]: e.target.value,
+              });
+            }}
           />
           <input
-            autoComplete='off'
             type='number'
+            autoComplete='off'
+            className='ingred add-rec-form'
             name='measured_amount'
             placeholder='measured amount (OPTIONAL)'
+            onChange={(e) => {
+              setCurrentIngredient({
+                ...currentIngredient,
+                [e.target.name]: e.target.value,
+              });
+            }}
           />
-          <select name='measured_unit' className='measured-unit'>
+          <select
+            name='measured_unit'
+            className='ingred measured-unit add-rec-form'
+            onChange={(e) => {
+              setCurrentIngredient({
+                ...currentIngredient,
+                [e.target.name]: e.target.value,
+              });
+              console.log(currentIngredient);
+            }}
+          >
             <option defaultValue='' value=''>
               -
             </option>
@@ -89,27 +95,44 @@ const AddRecipe = () => {
             <option value='tablespoons'>tablespoons</option>
             <option value='teaspoon'>teaspoon</option>
           </select>
+          <input
+            type='reset'
+            className='btn add-recipe-btn'
+            onClick={() => {
+              if (isNaN(parseInt(currentIngredient["measured_amount"]))) {
+                return alert("Measured amount must be a number.");
+              }
+              if (currentIngredient.ingredient) {
+                setIngredients([...ingredients, currentIngredient]);
+                setCurrentIngredient({});
+                return;
+              } else {
+                return alert("Please input an ingredient");
+              }
+            }}
+            value='Add Ingredient'
+          />
+          <button
+            className='btn add-recipe-btn'
+            onClick={(e) => submitRecipeHandler(e)}
+          >
+            Save
+          </button>
         </form>
       </div>
-      <button className='btn add-recipe-btn' onClick={(e) => addIngredient(e)}>
-        Add Ingredient
-      </button>
-      <button
-        className='btn add-recipe-btn'
-        onClick={(e) => createIngredients(e)}
-      >
-        Add All Ingredients
-      </button>
-      <button
-        className='btn add-recipe-btn'
-        onClick={(e) => submitRecipeHandler(e)}
-      >
-        Add Recipe
-      </button>
-      <div>
-        <h2>Preview</h2>
+      <div className='preview'>
+        <h1 style={{ textAlignLast: "center" }}>Ingredients</h1>
         {ingredients.map((ingredient, idx) => (
-          <div key={idx}>{ingredient.ingredient}</div>
+          <div key={idx}>
+            {ingredient.ingredient}
+            {ingredient.estimated_amount
+              ? ingredient.estimated_amount
+              : null}{" "}
+            {ingredient.measured_amount
+              ? `${ingredient.measured_amount}`
+              : null}{" "}
+            {ingredient.measured_unit ? ingredient.measured_unit : null}
+          </div>
         ))}
       </div>
     </div>
