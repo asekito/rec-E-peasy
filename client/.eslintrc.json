@@ -1,8 +1,13 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "mocha": true,
+    "jest": true,
+    "amd": true,
+    "node": true
   },
+  "parser": "babel-eslint",
   "extends": [
     "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
     "plugin:react-hooks/recommended", // Uses the recommended rules from @eslint-plugin-react-hooks
@@ -15,6 +20,6 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "jest"],
   "rules": { "react/prop-types": 0 }
 }

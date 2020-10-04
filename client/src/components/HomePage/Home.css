@@ -1,0 +1,27 @@
+#homepage-content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#home-bkimg {
+  background: url("../../assets/ratatouille.png");
+  background-size: cover;
+  filter: blur(3.2px);
+  height: 100%;
+  background-position-x: center;
+  width: 100%;
+  position: absolute;
+}
+
+#home-intro {
+  background: #bf7574d1;
+  position: absolute;
+  height: fit-content;
+  z-index: 10;
+  margin-top: 20px;
+  /* border-radius: 0px; */
+  padding: 20px 50px;
+  font-size: 1.2em;
+  text-align: -webkit-center;
+}
