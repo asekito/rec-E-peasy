@@ -2,14 +2,11 @@
   background: white;
   min-height: 450px;
   max-height: 500px;
-  min-width: 600px;
-  max-width: 720px;
+  min-width: 710px;
   outline: none;
-  padding: 40px;
+  padding: 70px;
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  overflow: overlay;
+  flex-direction: row;
 }
 
 #add-ingred-wrapper {
@@ -28,9 +25,23 @@
 .btn.add-recipe-btn {
   width: 190px;
   align-self: center;
-  margin: 20px 0px;
+  margin: 10px 0px;
 }
 
 select.measured-unit {
   margin: 0px 0px 30px;
+}
+
+.preview {
+  width: 50%;
+  border-left: 1px solid black;
+  padding-left: 20px;
+}
+
+.add-rec-form {
+  padding: 10px;
+}
+
+.buttons-container {
+  text-align: center;
 }
