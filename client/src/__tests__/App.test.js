@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 import { MemoryRouter } from "react-router-dom";
 
 import App from "../App";
-import Home from "../components/HomePage/Home";
-import Recipes from "../components/Recipes/Recipes";
+// import Home from "../components/HomePage/Home";
+// import Recipes from "../components/Recipes/Recipes";
 
 describe("App", () => {
   test("should render", () => {
@@ -20,5 +20,11 @@ describe("App", () => {
   it("renders the home component", () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find("Home")).toHaveLength(1);
+  });
+
+  it("should have all 3 routes to switch from", () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find("Switch")).toHaveLength(1);
+    expect(wrapper.find("Route")).toHaveLength(3);
   });
 });

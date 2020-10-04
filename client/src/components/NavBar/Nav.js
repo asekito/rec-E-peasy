@@ -7,7 +7,7 @@ const Nav = () => {
     <div id='nav-component'>
       <div id='nav-title'>
         <Link to='/'>
-          <h1 style={{ textDecoration: "none" }}>Rec-E-Peasy</h1>
+          <h1>Rec-E-Peasy</h1>
         </Link>
       </div>
       <ul id='nav-bar'>
