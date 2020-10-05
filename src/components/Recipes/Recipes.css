@@ -16,8 +16,7 @@
 }
 
 .card-container {
-  width: 100%;
-  text-align-last: center;
+  width: -webkit-fill-available;
 }
 
 #app {
