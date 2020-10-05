@@ -1,7 +1,7 @@
 .recipe-card {
   border: 2.7px solid #000000a1;
   display: flex;
-  margin: 5% 10%;
+  margin: 5% 18%;
   padding: 3%;
   border-radius: 8px;
   max-height: 100px;
@@ -11,6 +11,7 @@
   cursor: pointer;
   place-content: space-around;
   align-items: center;
+  background: #ffffffd9;
 }
 
 .recipe-image {
