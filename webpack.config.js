@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env) => {
   return {
@@ -9,6 +10,10 @@ module.exports = (env) => {
     output: {
       filename: "bundle.js",
       path: path.join(__dirname, "/public/dist"),
+    },
+    optimization: {
+      usedExports: true,
+      minimizer: [new TerserPlugin()],
     },
     module: {
       rules: [
