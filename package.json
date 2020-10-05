@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "build": "webpack",
-    "start:dev": "webpack-dev-server"
+    "build": "webpack --env.NODE_ENV=local --env.development --progress",
+    "start:dev": "webpack-dev-server --env.NODE_ENV=local --env.mode=development --progress"
   },
   "jest": {
     "setupFilesAfterEnv": [
