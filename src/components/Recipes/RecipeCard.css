@@ -19,10 +19,11 @@
 
 .recipe-popup {
   background: white;
-  min-height: 450px;
-  max-height: 500px;
-  min-width: 600px;
+  min-height: 480px;
+  max-height: 480px;
+  min-width: 700px;
   max-width: 720px;
+  border-radius: 8px;
 }
 
 .modal {
