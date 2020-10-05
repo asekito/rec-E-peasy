@@ -4,3 +4,5 @@ dist
 .env
 
 /Data_Body_example
+
+.DS_Store

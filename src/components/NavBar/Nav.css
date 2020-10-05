@@ -24,6 +24,30 @@ nav {
   margin: 0px 3.6px;
   font-size: 1.2em;
   font-weight: 500;
+  animation: nav-bar-hover-out 0.5s;
+}
+
+#nav-bar li a:hover {
+  animation: nav-bar-hover-in 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes nav-bar-hover-out {
+  from {
+    font-size: 1.4em;
+  }
+  to {
+    font-size: 1.2em;
+  }
+}
+
+@keyframes nav-bar-hover-in {
+  from {
+    font-size: 1.2em;
+  }
+  to {
+    font-size: 1.4em;
+  }
 }
 
 #nav-bar {
