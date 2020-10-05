@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "build": "webpack --env.NODE_ENV=local --env.development --progress",
+    "build": "webpack --env.NODE_ENV=local --env.mode=production",
     "start:dev": "webpack-dev-server --env.NODE_ENV=local --env.mode=development --progress",
     "start:prod": "webpack-dev-server --env.NODE_ENV=local --env.mode=production --progress"
   },
