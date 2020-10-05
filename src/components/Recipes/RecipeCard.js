@@ -23,7 +23,11 @@ const RecipeCard = ({ recipe }) => {
               </div>
             </div>
           ))}
-          <Modal open={open} onClose={toggle} className='modal'>
+          <Modal
+            open={open}
+            onClose={toggle}
+            className='modal whole-recipe-modal'
+          >
             <Suspense fallback={<div>Loading...</div>}>
               <WholeRecipe recipe={recipe} />
             </Suspense>

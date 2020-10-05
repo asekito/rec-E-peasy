@@ -1,8 +1,12 @@
-/* .recipe-name {
-  font-size: 1.4em;
-  font-weight: bold;
+.whole-recipe-modal {
+  animation: bounce-dat 0.5s;
 }
 
-.ingredients-list-title {
-  font-weight: 100;
-} */
+@keyframes bounce-dat {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 940px;
+  }
+}

@@ -1,6 +1,7 @@
 nav {
   box-shadow: 0px 12px 23px 23px #0d0d0deb;
   position: relative;
+  z-index: 10;
 }
 
 #nav-component {

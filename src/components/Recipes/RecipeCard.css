@@ -1,16 +1,14 @@
 .recipe-card {
-  border: 2.7px solid #000000a1;
   display: flex;
-  margin: 5% 10%;
+  margin: 3.6% 18%;
   padding: 3%;
   border-radius: 8px;
-  max-height: 100px;
-  min-height: 100px;
-  flex-direction: row;
-  place-content: center;
+  /* max-height: 100px; */
+  /* min-height: 100px; */
   cursor: pointer;
   place-content: space-around;
   align-items: center;
+  background: #fffffff5;
 }
 
 .recipe-image {
@@ -19,17 +17,13 @@
   min-height: 80px;
 }
 
-.ingredients-list-container {
-  display: inline-flex;
-  flex-direction: column;
-}
-
 .recipe-popup {
   background: white;
-  min-height: 450px;
-  max-height: 500px;
-  min-width: 600px;
+  min-height: 480px;
+  max-height: 480px;
+  min-width: 700px;
   max-width: 720px;
+  border-radius: 8px;
 }
 
 .modal {
@@ -50,10 +44,16 @@
 }
 
 .ingredients-list-title {
-  font-weight: 600;
+  font-size: 1.1em;
+  font-weight: 400;
+  text-decoration-line: underline;
 }
 
 .recipe-name {
-  font-size: 1.4em;
-  font-weight: bold;
+  font-size: 1.6em;
+  font-weight: 400;
+}
+
+.individual-ingredient {
+  font-weight: 200;
 }
