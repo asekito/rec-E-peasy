@@ -33,7 +33,7 @@ const Recipes = () => {
 
   return (
     <div className='recipes-page'>
-      <h2 style={{ marginTop: 60 }}>Your Recipes</h2>
+      <h1 style={{ marginTop: 60, color: "white" }}>Your Recipes</h1>
       <div>
         <button className='btn' onClick={toggle}>
           Add Recipe

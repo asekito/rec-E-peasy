@@ -1,0 +1,12 @@
+.modal {
+  animation: bounce-dat 0.5s;
+}
+
+@keyframes bounce-dat {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 940px;
+  }
+}
