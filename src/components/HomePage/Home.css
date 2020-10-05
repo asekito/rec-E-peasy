@@ -7,7 +7,7 @@
 }
 
 #home-bkimg {
-  background: url("../../assets/ratatouille.png");
+  background: url("http://d2ftulncrnqnvl.cloudfront.net/ratatouille.png");
   background-size: cover;
   filter: blur(3.2px);
   height: 100%;

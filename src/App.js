@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-
 import Nav from "./components/NavBar/Nav";
 import Home from "./components/HomePage/Home";
+
 const Recipes = lazy(() => import("./components/Recipes/Recipes"));
 const CookLog = lazy(() => import("./components/CookLog/CookLog"));
 
