@@ -49,6 +49,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Rec-E-Peasy",
       template: "./public/index.html",
+      favicon: "./src/assets/chefs-hat.svg",
     }),
     new MiniCssExtractPlugin(),
   ],
