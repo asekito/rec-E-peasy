@@ -5,7 +5,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("http://d2ftulncrnqnvl.cloudfront.net/cater-yang-unsplash.jpg");
   background-attachment: fixed;
-  background-size: cover;
+  /* background-size: cover; */
 }
 
 .btn {
@@ -19,6 +19,6 @@
   width: -webkit-fill-available;
 }
 
-#app {
+/* #app {
   height: 100%;
-}
+} */

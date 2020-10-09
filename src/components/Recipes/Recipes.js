@@ -15,13 +15,13 @@ const Recipes = () => {
   };
 
   useEffect(() => {
-    fetch("/recipes", {
+    fetch("/api/recipes", {
       method: "GET",
     })
       .then((data) => data.json())
       .then((data) => {
         if (data.errors) {
-          alert(data.errors);
+          alert(data.errors[0]);
         }
         if (data.body) {
           setRecipes(data.body);

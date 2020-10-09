@@ -1,0 +1,10 @@
+#cooklog-contents {
+  background: white;
+  height: -webkit-fill-available;
+}
+
+#cooklog-contents h1 {
+  text-align-last: center;
+  margin: 0;
+  padding-top: 3.9%;
+}
