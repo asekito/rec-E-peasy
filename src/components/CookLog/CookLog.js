@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./CookLog.css";
+import CookLogCard from "./CookLogCard";
 
 const CookLog = () => {
   const [cookLogs, setCookLogs] = useState([]);
@@ -29,13 +30,7 @@ const CookLog = () => {
       <h1>Cooking Log</h1>
       <div id='cooklog-container'>
         {cookLogs.map((cookLog, idx) => (
-          <div key={idx}>
-            <div>{cookLog.name}</div>
-            <div>{cookLog.date ? cookLog.date : null}</div>
-            <div>{cookLog.meal ? cookLog.meal : null}</div>
-            <div>{cookLog.rating}</div>
-            <div>{cookLog.description ? cookLog.description : null}</div>
-          </div>
+          <CookLogCard key={idx} cookLog={cookLog} />
         ))}
       </div>
     </div>
