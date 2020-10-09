@@ -11,7 +11,7 @@ const AddRecipe = () => {
   const submitRecipeHandler = (e) => {
     e.preventDefault();
     const data = { name: recipeName, ingredients: ingredients };
-    fetch("/recipes", {
+    fetch("/api/recipes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

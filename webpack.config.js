@@ -38,7 +38,7 @@ module.exports = {
     port: 3001,
     historyApiFallback: true,
     proxy: {
-      "/recipes": {
+      "/api": {
         target: "http://localhost:3000",
         secure: false,
         changeOrigin: true,
