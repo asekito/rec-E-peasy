@@ -1,6 +1,6 @@
 import React, { useState, lazy, Suspense } from "react";
-import "./RecipeCard.css";
 import { Modal } from "@material-ui/core";
+import "./RecipeCard.css";
 
 const WholeRecipe = lazy(() => import("./WholeRecipe.js"));
 

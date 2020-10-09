@@ -1,8 +1,9 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
-import RecipeCard from "./RecipeCard";
 import "./Recipes.css";
 import { Modal } from "@material-ui/core";
+// import RecipeCard from "./RecipeCard";
 
+const RecipeCard = lazy(() => import("./RecipeCard.js"));
 const AddRecipe = lazy(() => import("./AddRecipe"));
 
 const Recipes = () => {
@@ -54,7 +55,9 @@ const Recipes = () => {
       </div>
       <div className='card-container'>
         {recipes.map((recipe, idx) => (
-          <RecipeCard recipe={recipe} key={idx} />
+          <Suspense fallback={<div>Loading...</div>} key={idx}>
+            <RecipeCard recipe={recipe} />
+          </Suspense>
         ))}
       </div>
     </div>
