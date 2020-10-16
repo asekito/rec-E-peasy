@@ -1,0 +1,15 @@
+.cooklog-card-image {
+  float: right;
+  border: 1px solid black;
+  width: 150px;
+  height: 150px;
+}
+
+.cooklog-information {
+  float: left;
+}
+
+.cook-log-card {
+  /* display: flex; */
+  display: inline-block;
+}
