@@ -27,7 +27,7 @@ const App = () => {
             </Route>
           </Switch>
         </Suspense>
-        <div>
+        <div id="footer" style={{background: "black"}}>
           Icons made by{" "}
           <a href='https://www.flaticon.com/authors/freepik' title='Freepik'>
             Freepik

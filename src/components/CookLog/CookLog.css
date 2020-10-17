@@ -1,10 +1,16 @@
 #cooklog-contents {
   background: white;
-  height: -webkit-fill-available;
+  height: fit-content;
 }
 
 #cooklog-contents h1 {
   text-align-last: center;
   margin: 0;
   padding-top: 3.9%;
+}
+
+#cooklog-container {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0 20%;
 }
