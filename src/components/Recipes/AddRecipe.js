@@ -11,7 +11,7 @@ const AddRecipe = () => {
   const submitRecipeHandler = (e) => {
     e.preventDefault();
     const data = { name: recipeName, ingredients: ingredients };
-    fetch("/api/recipes", {
+    fetch("/api/recipes/post-recipe", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -61,40 +61,6 @@ const AddRecipe = () => {
               });
             }}
           />
-          <input
-            type='number'
-            autoComplete='off'
-            className='ingred add-rec-form'
-            name='measured_amount'
-            placeholder='measured amount (OPTIONAL)'
-            onChange={(e) => {
-              setCurrentIngredient({
-                ...currentIngredient,
-                [e.target.name]: e.target.value,
-              });
-            }}
-          />
-          <select
-            name='measured_unit'
-            className='ingred measured-unit add-rec-form'
-            onChange={(e) => {
-              setCurrentIngredient({
-                ...currentIngredient,
-                [e.target.name]: e.target.value,
-              });
-              console.log(currentIngredient);
-            }}
-          >
-            <option defaultValue='' value=''>
-              -
-            </option>
-            <option value='ounce'>ounce</option>
-            <option value='pounds'>pound(s)</option>
-            <option value='pint'>pint</option>
-            <option value='cup'>cup</option>
-            <option value='tablespoons'>tablespoons</option>
-            <option value='teaspoon'>teaspoon</option>
-          </select>
           <input
             type='reset'
             className='btn add-recipe-btn'

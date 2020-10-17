@@ -15,7 +15,7 @@ const Recipes = () => {
   };
 
   useEffect(() => {
-    fetch("/api/recipes", {
+    fetch("/api/recipes/get-all-recipes", {
       method: "GET",
     })
       .then((data) => data.json())
