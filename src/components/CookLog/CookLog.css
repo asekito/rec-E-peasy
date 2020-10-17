@@ -1,6 +1,6 @@
 #cooklog-contents {
   background: white;
-  height: fit-content;
+  height: -webkit-fill-available;
 }
 
 #cooklog-contents h1 {

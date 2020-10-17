@@ -9,7 +9,7 @@ const CookLog = () => {
   // setCookLogs
   // display
   useEffect(() => {
-    fetch("/api/food-log", {
+    fetch("/api/cooklog/get-all-cooklogs", {
       method: "GET",
     })
       .then((data) => data.json())

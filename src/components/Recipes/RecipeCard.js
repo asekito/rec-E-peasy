@@ -8,7 +8,6 @@ const RecipeCard = ({ recipe }) => {
   const [open, setOpen] = useState(false);
 
   const toggle = () => {
-    console.log(recipe)
     setOpen(!open);
   };
 
