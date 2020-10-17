@@ -8,15 +8,19 @@ const RecipeCard = ({ recipe }) => {
   const [open, setOpen] = useState(false);
 
   const toggle = () => {
+    console.log(recipe)
     setOpen(!open);
   };
+
+  const ingredientsParsed = JSON.parse(recipe.ingredients);
+
   return (
     <div className='recipe-card' onClick={toggle}>
       <div className='recipe-info'>
-        <div className='recipe-name'>{recipe.name}</div>
+        <div className='recipe-name'>{recipe.recipe_name}</div>
         <div className='ingredients-list-title'>Ingredients:</div>
         <div className='ingredients-list-container'>
-          {recipe.ingredients.slice(0, 2).map((ingredientElement, idx) => (
+          {ingredientsParsed.slice(0, 2).map((ingredientElement, idx) => (
             <div className='individual-ingredient' key={idx}>
               <div className='ingredient-name'>
                 {ingredientElement.ingredient}
@@ -29,7 +33,7 @@ const RecipeCard = ({ recipe }) => {
             className='modal whole-recipe-modal'
           >
             <Suspense fallback={<div>Loading...</div>}>
-              <WholeRecipe recipe={recipe} />
+              <WholeRecipe recipe={recipe} ingredients={ingredientsParsed} />
             </Suspense>
           </Modal>
         </div>
