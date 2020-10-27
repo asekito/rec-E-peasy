@@ -1,6 +1,8 @@
 #cooklog-contents {
   background: white;
-  height: fit-content;
+  height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
 }
 
 #cooklog-contents h1 {
@@ -13,4 +15,19 @@
   display: flex;
   flex-direction: column-reverse;
   margin: 0 20%;
+}
+
+.btn {
+  border: none;
+  place-self: center;
+  border-radius: 6px;
+  padding: 8px;
+  margin: 20px;
+  background: lightslategrey;
+  color: white;
+  cursor: pointer;
+}
+
+.modal {
+  background: white;
 }
