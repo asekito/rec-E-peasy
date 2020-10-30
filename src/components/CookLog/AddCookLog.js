@@ -6,19 +6,19 @@ const AddCookLog = () => {
     <div id='add-cook-log-content'>
       <h1>Add Cook Log</h1>
       <div className='cook-log-form'>
-        <label>
+        <label className='cook-log-labels'>
           Cook Log Name
           <input type='text' />
         </label>
-        <label>
+        <label className='cook-log-labels'>
           Associated Recipe
           <input type='text' />
         </label>
-        <label>
+        <label className='cook-log-labels'>
           Date
           <input type='date' />
         </label>
-        <label>
+        <label className='cook-log-labels'>
           Meal
           <select>
             <option value='Breakfast'>Breakfast</option>
@@ -27,11 +27,11 @@ const AddCookLog = () => {
             <option value='Snack'>Snack</option>
           </select>
         </label>
-        <label>
+        <label className='cook-log-labels'>
           Rating
-          <input type='number' /> / 10
+          <input type='number' placeholder='Out of 10' />
         </label>
-        <label>
+        <label className='cook-log-labels'>
           Notes
           <input type='text' />
         </label>
