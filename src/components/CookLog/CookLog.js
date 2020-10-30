@@ -34,13 +34,7 @@ const CookLog = () => {
       <button className='btn' onClick={toggle}>
         Add Cook Log
       </button>
-      <Modal
-        open={newCookLog}
-        onClose={toggle}
-        aria-labelledby='simple-modal-title'
-        aria-describedby='simple-modal-description'
-        // className='modal'
-      >
+      <Modal open={newCookLog} onClose={toggle} className='modal'>
         <React.Suspense fallback={<div>Loading...</div>}>
           <AddCookLog />
         </React.Suspense>
