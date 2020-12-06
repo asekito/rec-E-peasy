@@ -1,6 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import "./Recipes.css";
 import { Modal } from "@material-ui/core";
+import fetcher from "../../util/fetcher";
 // import RecipeCard from "./RecipeCard";
 
 const RecipeCard = lazy(() => import("./RecipeCard.js"));
@@ -15,21 +16,9 @@ const Recipes = () => {
   };
 
   useEffect(() => {
-    fetch("/api/recipes/get-all-recipes", {
-      method: "GET",
-    })
-      .then((data) => data.json())
-      .then((data) => {
-        if (data.errors) {
-          throw data.errors;
-        }
-        if (data.body) {
-          setRecipes(data.body);
-        }
-      })
-      .catch((err) => {
-        alert(err); // Come back and fix error handling
-      });
+    fetcher("/api/recipes/get-all-recipes", { method: "GET" }).then((data) => {
+      setRecipes(data.body);
+    });
   }, []);
 
   return (
